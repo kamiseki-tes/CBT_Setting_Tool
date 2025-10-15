@@ -17,6 +17,11 @@ powershell.exe -NoProfile -ExecutionPolicy RemoteSigned -Command "Start-Process 
 exit
 )
 
+rem 接続先サーバーアドレス
+set ipStr=172.16.224.25
+rem ネットワークドライブの割り当て
+net use Y: \\%ipStr%\共有
+
 echo WindowsUpdateのスタートアップの種類を手動にします。
 reg add "HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\wuauserv" /v "Start" /t REG_DWORD /d 3 /f
 echo;
@@ -46,14 +51,22 @@ echo ディスプレイの電源を切る設定を「なし」にします。
 powercfg -x monitor-timeout-ac 0
 echo;
 
-rem echo 適用済み確認用のファイルをデスクトップに作成します。
-rem type nul > %USERPROFILE%\Desktop\試験バッチ適用中.txt
-rem echo;
 echo 適用済み確認用にデスクトップ画像を変更します。
 set WALLPAPER=%USERPROFILE%\Desktop\CBTS環境設定用_Win11\Assets\img\CBTS_ready.png
 reg add "HKCU\Control Panel\Desktop" /v wallpaper /t REG_SZ /d "%WALLPAPER%" /f
 RUNDLL32.EXE user32.dll,UpdatePerUserSystemParameters
 echo;
+
+rem バッチを最新化（開始前バッチ処理では終了後バッチをコピーする）
+xcopy /y Y:\PC設定\設定バッチ\02End_Win11CBTS終了後環境設定.bat %USERPROFILE%\Desktop\CBTS環境設定用_Win11\Assets\bat
+
+rem ネットワークドライブの除去
+net use Y: /delete /y
+
+
 echo Windowsを再起動します。
 pause
 shutdown.exe /r /t 0
+
+
+

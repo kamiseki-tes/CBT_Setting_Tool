@@ -35,9 +35,6 @@ rem スクリーンセーバーは無効のままにします。
 rem 電源接続時のスリープ自動移行は「なし」のままにします。
 rem ディスプレイの電源を切る設定は「なし」のままにします。
 
-rem echo 確認用のファイルをデスクトップから削除します。
-rem del %USERPROFILE%\Desktop\試験バッチ適用中.txt
-rem echo;
 echo 適用済み確認用にデスクトップ画像を変更します。
 set WALLPAPER=%USERPROFILE%\Desktop\CBTS環境設定用_Win11\Assets\img\CBTS_standby.png
 reg add "HKCU\Control Panel\Desktop" /v wallpaper /t REG_SZ /d "%WALLPAPER%" /f
