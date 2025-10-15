@@ -1,0 +1,1 @@
+PowerShell -Command "Set-MpPreference -DisableRealtimeMonitoring $false -DisableBehaviorMonitoring $false -DisableBlockAtFirstSeen $false -DisableIOAVProtection $true -DisablePrivacyMode $false -DisableArchiveScanning $false"

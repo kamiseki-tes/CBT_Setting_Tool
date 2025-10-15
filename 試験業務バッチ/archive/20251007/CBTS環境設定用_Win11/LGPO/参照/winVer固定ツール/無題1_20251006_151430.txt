@@ -1,0 +1,5 @@
+LGPO.exe /b C:\Users\b21ws31\Desktop\winVer固定ツール\ver1.0(win10固定)\Assets\stock
+
+cd C:\Users\b21ws31\Desktop\winVer固定ツール\ver1.0(win10固定)\Assets
+
+
