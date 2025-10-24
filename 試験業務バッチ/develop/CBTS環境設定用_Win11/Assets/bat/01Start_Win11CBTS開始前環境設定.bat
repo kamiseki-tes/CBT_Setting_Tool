@@ -19,7 +19,7 @@ exit
 )
 
 rem 接続先サーバーアドレス
-set ipStr=172.16.224.25
+set ipStr=192.168.10.2
 rem ネットワークドライブの割り当て
 net use Y: \\%ipStr%\共有
 
@@ -59,7 +59,7 @@ RUNDLL32.EXE user32.dll,UpdatePerUserSystemParameters
 echo;
 
 rem バッチを最新化（開始前バッチ処理では終了後バッチをコピーする）
-xcopy /y Y:\PC設定\設定バッチ\02End_Win11CBTS終了後環境設定.bat %USERPROFILE%\Desktop\CBTS環境設定用_Win11\Assets\bat
+xcopy /y Y:\PC設定用\設定バッチ配布元\02End_Win11CBTS終了後環境設定.bat %USERPROFILE%\Desktop\CBTS環境設定用_Win11\Assets\bat
 
 rem ネットワークドライブの除去
 net use Y: /delete /y
