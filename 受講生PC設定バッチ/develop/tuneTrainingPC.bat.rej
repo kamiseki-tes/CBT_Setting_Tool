@@ -1,0 +1,10 @@
+diff a/受講生PC設定バッチ/develop/tuneTrainingPC.bat b/受講生PC設定バッチ/develop/tuneTrainingPC.bat	(rejected hunks)
+@@ -3,7 +3,7 @@
+ 
+ echo *****************************************************
+ echo 
+-echo ��u���pPC�̐ݒ肵�܂�(������s)
++echo ��u���pPC��ݒ肵�܂�(�^�X�N�X�P�W���[������̒�����s)
+ echo v1.00
+ echo 
+ echo *****************************************************
