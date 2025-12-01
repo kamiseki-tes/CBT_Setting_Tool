@@ -2,7 +2,7 @@
 
 echo *****************************************************
 echo 
-echo 設定用バッチ, 更新バッチを配置してタスクスケジューラに登録します(手動実行)
+echo EdgeでInPrivateモードを強制する設定を解除する(手動実行)
 echo v1.00
 echo 
 echo *****************************************************
@@ -15,11 +15,8 @@ powershell.exe -NoProfile -ExecutionPolicy RemoteSigned -Command "Start-Process 
 exit
 )
 
-echo 所定ディレクトリにファイルを配置（設定・更新）
-xcopy /e /y %~dp0\Assets C:\maintenanceBat\
-
-echo XMLを利用してタスクスケジューラに登録する（設定バッチ・更新バッチ）
-schtasks /Create/XML TaskTest1.xml /tn "TaskTest1" /F
-schtasks /Create/XML TaskTest2.xml /tn "TaskTest2" /F
+reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "InPrivateModeAvailability" /t REG_DWORD /d "0" /f
+echo EdgeでInPrivateモードを強制する設定を一時的に解除しました
+echo PCを再起動後に変更が適用されます
 
 pause
