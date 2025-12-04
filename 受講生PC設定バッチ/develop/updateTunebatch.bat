@@ -19,13 +19,13 @@ echo;
 
 @REM 設定バッチを最新化（サーバーの所定ディレクトリからコピー）
 
-@REM rem 接続先サーバーアドレス
-@REM set ipStr=172.16.224.25
-@REM rem ネットワークドライブの割り当て
-@REM net use Y: \\%ipStr%\共有
+@REM 接続先サーバーアドレス（新宿）
+set ipStr=192.168.100.8
+@REM ネットワークドライブの割り当て
+net use Y: \\%ipStr%\共有
 
-@REM rem バッチを最新化（開始前バッチ処理では終了後バッチをコピーする）
-@REM xcopy /y Y:\PC設定\設定バッチ\02End_Win11CBTS終了後環境設定.bat %USERPROFILE%\Desktop\CBTS環境設定用_Win11\Assets\bat
+@REM バッチを最新化（開始前バッチ処理では終了後バッチをコピーする）
+xcopy /y Y:\PC設定\設定バッチ\tuneTrainingPC.bat C:\maintenanceBat\Assets\bat
 
 @REM rem ネットワークドライブの除去
-@REM net use Y: /delete /y
+net use Y: /delete /y
