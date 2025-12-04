@@ -15,7 +15,7 @@ exit
 
 @rem Cドライブ直下にmaintenanceBatフォルダを作成してファイル類を配置
 echo 所定ディレクトリに必要データを配置します
-xcopy /e /y %~dp0\Assets C:\maintenanceBat\Assets
+xcopy /e /y %~dp0\Assets C:\maintenanceBat\Assets\
 echo;
 
 @rem XMLを読み込みタスクスケジューラに登録する（設定バッチ・更新バッチ）
