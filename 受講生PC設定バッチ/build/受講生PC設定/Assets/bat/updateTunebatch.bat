@@ -1,5 +1,5 @@
 @echo off
-@if not “%~0″==”%~dp0.\%~nx0″ start /min cmd /c,”%~dp0.\%~nx0” %* & goto :eof
+@if not "%~0"=="%~dp0.\%~nx0" start /min cmd /c,"%~dp0.\%~nx0" %* & goto EOF
 
 echo *****************************************************
 echo 設定用バッチを更新します(タスクスケジューラからの定期実行)
